@@ -52,10 +52,11 @@ PROJETO_LED-BLUETOOTH/
 │   └── esquema_circuito.png
 │── extras/
 │   └── exemplos_comandos.txt
+
 👨‍💻 Equipe
 Felipe Ulisses
-
-[Adicione os demais integrantes aqui]
+Gabriel Dias
+Jailson Souza
 
 📚 Licença
 Este projeto está licenciado sob a Apache License 2.0. Você pode usar, modificar e distribuir este código, desde que mantenha os avisos de licença e não ofereça garantias.
