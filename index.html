@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação: Projeto Concentrados</title>
+    <link rel="icon" type="image/png" href="img/Gemini_Generated_Image_gzmd7gzmd7gzmd7g-removebg-preview.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1A73E8',
+                        'secondary-gray': '#F5F5F5',
+                        'dark-text': '#202124',
+                        'accent-orange': '#FF8C00', /* Cor de destaque para botões */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos globais e de fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #202124;
+        }
+        /* Estilo para simular realce de sintaxe em blocos de código */
+        .code-snippet {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .code-snippet code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            line-height: 1.5;
+        }
+        .code-keyword { color: #66d9ef; }
+        .code-type { color: #a6e22e; }
+        .code-string { color: #e6db74; }
+        .code-number { color: #ae81ff; }
+        .code-comment { color: #75715e; }
+        /* Habilitar rolagem suave para navegação entre seções */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Estilo para a barra de navegação horizontal responsiva */
+        .nav-scroll {
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        .nav-scroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari e Opera */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-primary-blue shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-4xl font-extrabold text-white text-center sm:text-left">
+                Documentação: Projeto Sistemas Digitais - Concentrados
+            </h1>
+        </div>
+        
+        <!-- Barra de Navegação Rápida (Botões) -->
+        <nav class="bg-blue-700 py-3 shadow-inner">
+            <div class="container mx-auto px-4">
+                <div class="nav-scroll flex space-x-3">
+                    <a href="#secao1" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">1. Nome</a>
+                    <a href="#secao2" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">2. Descrição</a>
+                    <a href="#secao3" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">3. Palavras-chave</a>
+                    <a href="#secao4" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">4. Autores</a>
+                    <a href="#secao5" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">5. Componentes</a>
+                    <a href="#secao6" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">6. Ferramentas</a>
+                    <a href="#secao7" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">7. Montagem</a>
+                    <a href="#secao8" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">8. Código</a>
+                    <a href="#secao9" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">9. Download</a>
+                    <a href="#secao10" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">10. Vídeo</a>
+                    <a href="#secao11" class="text-white hover:bg-accent-orange bg-blue-600 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200 flex-shrink-0">11. Lições</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- 1. Nome do Projeto -->
+        <section id="secao1" class="mb-12 p-6 bg-secondary-gray rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-primary-blue">1. Nome do Projeto</h2>
+            <p class="text-5xl font-extrabold text-dark-text">Controle de Brilho de 4 LEDs via Joystick (PWM)</p>
+        </section>
+
+        <!-- 2. Descrição do Projeto -->
+        <section id="secao2" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">2. Descrição do Projeto</h2>
+            
+            <!-- 2a. Motivação, Objetivo e Contextualização -->
+            <div class="mb-8 p-6 bg-white rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold mb-3">a) Motivação, Objetivo e Contextualização</h3>
+                <p class="mb-3">
+                    <span class="font-bold">Motivação:</span> Explorar a interface homem-máquina e a manipulação de sinais analógicos e digitais. O joystick é um periférico comum em sistemas de controle, e este projeto oferece uma introdução prática à leitura de eixos e ao controle de potência de saída.
+                </p>
+                <p class="mb-3">
+                    <span class="font-bold">Objetivo:</span> O projeto visa construir um sistema onde o deslocamento do joystick nos eixos X (horizontal) e Y (vertical) controle o brilho de quatro LEDs dedicados (Cima, Baixo, Esquerda, Direita). O botão do joystick deve ligar todos os LEDs no brilho máximo.
+                </p>
+                <p>
+                    <span class="font-bold">Contextualização:</span> Este projeto aplica conceitos fundamentais de Sistemas Digitais e Eletrônica Analógica. Ele demonstra a conversão de um sinal analógico (`analogRead`) em um valor digital de controle (`map`) e o uso da Modulação por Largura de Pulso (PWM) via `analogWrite` para simular uma saída analógica (o brilho do LED).
+                </p>
+            </div>
+            <!-- 2b. Esquema Conceitual -->
+            <div class="mb-8 p-6 bg-secondary-gray rounded-xl shadow-md">
+                <h3 class="text-xl font-semibold mb-3">b) Fluxo de Dados e Arquitetura</h3>
+                <p class="text-gray-700 mb-4">O sistema é dividido em três blocos principais: Entrada Analógica e Digital (Joystick), Processamento (Arduino) e Saída PWM (LEDs).</p>
+                <div class="text-center bg-white p-4 rounded-lg border border-gray-300">
+                     <p class="text-lg font-mono text-green-700">Joystick (VRx/VRy) <span class="text-primary-blue">-></span> analogRead <span class="text-primary-blue">-></span> map(0-1023 -> 0-255)</p>
+                    <p class="text-lg font-mono text-green-700">Joystick (SW) <span class="text-primary-blue">-></span> digitalRead <span class="text-primary-blue">-></span> Condicional (Botão)</p>
+                    <p class="text-lg font-mono text-red-700">Processamento <span class="text-primary-blue">-></span> analogWrite <span class="text-primary-blue">-></span> LEDs (Brilho Variável)</p>
+                    <p class="mt-2 text-sm italic text-gray-500">Diagrama de Blocos do Controle Interativo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Palavras-chave -->
+        <section id="secao3" class="mb-12 p-6 bg-yellow-50 rounded-xl shadow-lg border-l-4 border-yellow-500">
+            <h2 class="text-2xl font-bold mb-4 text-dark-text">3. Palavras-chave</h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">Arduino</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">Joystick</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">PWM</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">analogRead()</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">Função map()</span>
+                <span class="bg-yellow-200 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-medium">Sistemas Embarcados</span>
+            </div>
+        </section>
+
+        <!-- 4. Autores (Usando suas informações) -->
+        <section id="secao4" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">4. Autores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Autor 1 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transform transition duration-300 hover:scale-[1.02]">
+                    <img src="img/FotoMinhaDeCrachácortada.jpeg" alt="Foto de Felipe Ulisses" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary-blue" onerror="this.onerror=null; this.src='https://placehold.co/120x120/73C9E8/FFFFFF?text=F.U.';">
+                    <h3 class="text-xl font-bold mb-2">Felipe Ulisses</h3>
+                    <p class="text-gray-600 mb-4">Especialista em programação</p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/FelipeUCAA" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.884-.015-1.745-2.787.605-3.371-1.34-3.371-1.34-.457-1.156-1.117-1.464-1.117-1.464-.91-.617.07-.605.07-.605 1.008.07 1.538 1.036 1.538 1.036.892 1.535 2.345 1.091 2.91.832.091-.645.352-1.091.644-1.34-2.224-.251-4.555-1.111-4.555-4.945 0-1.091.39-1.984 1.029-2.68a3.535 3.535 0 01.1-2.646s.792-.268 2.6.984c.75-.208 1.543-.312 2.336-.317.792.005 1.586.109 2.337.317 1.808-1.252 2.6-.984 2.6-.984.639.696 1.028 1.59 1.028 2.68 0 3.84-2.335 4.691-4.567 4.941.357.308.675.917.675 1.854 0 1.34-.012 2.423-.012 2.754 0 .267.18.579.688.481C19.139 20.218 22 16.463 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/felipe-ulisses-b90514270" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A2.5 2.5 0 001 4.5v15A2.5 2.5 0 004.5 22h15A2.5 2.5 0 0022 19.5v-15A2.5 2.5 0 0019.5 2zM8 19.5h-3V10h3v9.5zM6.5 8.75A1.75 1.75 0 118.25 7 1.75 1.75 0 016.5 8.75zM19.5 19.5h-3V13c0-1.66-1.34-3-3-3s-3 1.34-3 3v6.5h-3V10h3v1.5a4.49 4.49 0 014-2.5c2.2 0 4 1.8 4 4v6.5z" /></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Autor 2 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transform transition duration-300 hover:scale-[1.02]">
+                    <img src="img/WhatsApp Image 2025-12-03 at 1.37.27 PM.jpeg" alt="Foto de Gabriel Dias" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary-blue" onerror="this.onerror=null; this.src='https://placehold.co/120x120/4A90E2/FFFFFF?text=G.D.';">
+                    <h3 class="text-xl font-bold mb-2">Gabriel Dias</h3>
+                    <p class="text-gray-600 mb-4">Montagem e integração do protoboard</p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/Diaszy7" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.884-.015-1.745-2.787.605-3.371-1.34-3.371-1.34-.457-1.156-1.117-1.464-1.117-1.464-.91-.617.07-.605.07-.605 1.008.07 1.538 1.036 1.538 1.036.892 1.535 2.345 1.091 2.91.832.091-.645.352-1.091.644-1.34-2.224-.251-4.555-1.111-4.555-4.945 0-1.091.39-1.984 1.029-2.68a3.535 3.535 0 01.1-2.646s.792-.268 2.6.984c.75-.208 1.543-.312 2.336-.317.792.005 1.586.109 2.337.317 1.808-1.252 2.6-.984 2.6-.984.639.696 1.028 1.59 1.028 2.68 0 3.84-2.335 4.691-4.567 4.941.357.308.675.917.675 1.854 0 1.34-.012 2.423-.012 2.754 0 .267.18.579.688.481C19.139 20.218 22 16.463 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-dias-7763b6289" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A2.5 2.5 0 001 4.5v15A2.5 2.5 0 004.5 22h15A2.5 2.5 0 0022 19.5v-15A2.5 2.5 0 0019.5 2zM8 19.5h-3V10h3v9.5zM6.5 8.75A1.75 1.75 0 118.25 7 1.75 1.75 0 016.5 8.75zM19.5 19.5h-3V13c0-1.66-1.34-3-3-3s-3 1.34-3 3v6.5h-3V10h3v1.5a4.49 4.49 0 014-2.5c2.2 0 4 1.8 4 4v6.5z" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Autor 3 (Novo) -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transform transition duration-300 hover:scale-[1.02]">
+                    <img src="img/WhatsApp Image 2025-12-03 at 1.42.43 PM.jpeg" alt="Foto de Jailson Junior" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary-blue" onerror="this.onerror=null; this.src='https://placehold.co/120x120/E8A61A/FFFFFF?text=J.J.';">
+                    <h3 class="text-xl font-bold mb-2">Jailson Junior</h3>
+                    <p class="text-gray-600 mb-4">Gerente de projeto</p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/JootaJR" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.884-.015-1.745-2.787.605-3.371-1.34-3.371-1.34-.457-1.156-1.117-1.464-1.117-1.464-.91-.617.07-.605.07-.605 1.008.07 1.538 1.036 1.538 1.036.892 1.535 2.345 1.091 2.91.832.091-.645.352-1.091.644-1.34-2.224-.251-4.555-1.111-4.555-4.945 0-1.091.39-1.984 1.029-2.68a3.535 3.535 0 01.1-2.646s.792-.268 2.6.984c.75-.208 1.543-.312 2.336-.317.792.005 1.586.109 2.337.317 1.808-1.252 2.6-.984 2.6-.984.639.696 1.028 1.59 1.028 2.68 0 3.84-2.335 4.691-4.567 4.941.357.308.675.917.675 1.854 0 1.34-.012 2.423-.012 2.754 0 .267.18.579.688.481C19.139 20.218 22 16.463 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jailson-junior-6940791a3" target="_blank" class="text-primary-blue hover:text-blue-700 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A2.5 2.5 0 001 4.5v15A2.5 2.5 0 004.5 22h15A2.5 2.5 0 0022 19.5v-15A2.5 2.5 0 0019.5 2zM8 19.5h-3V10h3v9.5zM6.5 8.75A1.75 1.75 0 118.25 7 1.75 1.75 0 016.5 8.75zM19.5 19.5h-3V13c0-1.66-1.34-3-3-3s-3 1.34-3 3v6.5h-3V10h3v1.5a4.49 4.49 0 014-2.5c2.2 0 4 1.8 4 4v6.5z" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Componentes e Suprimentos -->
+        <section id="secao5" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">5. Componentes e Suprimentos</h2>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-secondary-gray">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Componente</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantidade</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descrição Detalhada</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition duration-150">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-dark-text">BlackBoard</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
+                            <td class="px-6 py-4 text-sm text-gray-700">Microcontrolador principal. Lê os sinais analógicos e digitais do Joystick.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition duration-150">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-dark-text">Módulo Joystick (KY-023)</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
+                            <td class="px-6 py-4 text-sm text-gray-700">Dispositivo de entrada com 2 eixos analógicos (VRx/VRy) e 1 botão digital (SW).</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition duration-150">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-dark-text">LED (Diodo Emissor de Luz)</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4</td>
+                            <td class="px-6 py-4 text-sm text-gray-700">Saídas visuais. Controladas via Modulação por Largura de Pulso (PWM).</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition duration-150">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-dark-text">Resistor de Filme de Carbono</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4x 220 Ω</td>
+                            <td class="px-6 py-4 text-sm text-gray-700">Resistor limitador de corrente, essencial para proteger os LEDs e os pinos PWM do Arduino.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- 6. Aplicativos e Plataforma -->
+        <section id="secao6" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">6. Aplicativos e Plataforma</h2>
+            <ul class="space-y-4">
+                <li class="p-4 bg-secondary-gray rounded-lg shadow-sm flex justify-between items-center">
+                    <span class="font-semibold text-dark-text">Arduino IDE</span>
+                    <span class="bg-primary-blue text-white text-xs font-bold px-3 py-1 rounded-full">v2.3.2</span>
+                </li>
+                <li class="p-4 bg-secondary-gray rounded-lg shadow-sm flex justify-between items-center">
+                    <span class="font-semibold text-dark-text">Fritzing (Software de Diagramação)</span>
+                    <span class="bg-primary-blue text-white text-xs font-bold px-3 py-1 rounded-full">v0.9.9</span>
+                </li>
+                <li class="p-4 bg-secondary-gray rounded-lg shadow-sm flex justify-between items-center">
+                    <span class="font-semibold text-dark-text">Monitor Serial do Arduino</span>
+                    <span class="bg-primary-blue text-white text-xs font-bold px-3 py-1 rounded-full">Debugging</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. Passo a passo: Montagem do Projeto (Com Diagrama) -->
+        <section id="secao7" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">7. Passo a passo: Montagem do Projeto</h2>
+            <p class="mb-6 text-gray-700">Siga o diagrama de conexões e os passos abaixo para montar o circuito. Utilize os pinos PWM (6, 9, 10, 11) para os LEDs e os pinos analógicos (A0, A1) para o Joystick.</p>
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-xl font-bold mb-2 text-primary-blue text-center">Diagrama do Protótipo</h3>
+                <img src="img/Gemini_Generated_Image_ede9x9ede9x9ede9.png" alt="Diagrama Fritzing do Joystick com LEDs PWM" class="mx-auto rounded-lg border border-gray-300 shadow-md">
+                <p class="mt-2 text-sm italic text-gray-500 text-center">Esquema Fritzing do Joystick conectado a 4 LEDs via pinos PWM.</p>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Passo 1: Alimentação do Joystick -->
+                <div class="bg-white p-6 rounded-xl shadow-lg md:flex md:items-center">
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold mb-2 text-primary-blue">Passo 1: Alimentação e Botão do Joystick</h3>
+                        <p class="text-gray-700">Conecte o pino VCC do Joystick ao 5V do Arduino e o pino GND ao GND do Arduino. Conecte o pino do botão (SW) ao pino digital D2.</p>
+                    </div>
+                </div>
+
+                <!-- Passo 2: Eixos Analógicos -->
+                <div class="bg-white p-6 rounded-xl shadow-lg md:flex md:items-center md:flex-row-reverse">
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold mb-2 text-primary-blue">Passo 2: Conexão dos Eixos Analógicos</h3>
+                        <p class="text-gray-700">Conecte o pino do eixo vertical (VRy) ao pino analógico A1 (`yPin`) e o pino do eixo horizontal (VRx) ao pino analógico A0 (`xPin`).</p>
+                    </div>
+                </div>
+                
+                <!-- Passo 3: Conexão dos LEDs (PWM) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg md:flex md:items-center">
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold mb-2 text-primary-blue">Passo 3: LEDs de Saída e Pinos PWM</h3>
+                        <p class="text-gray-700">Para cada LED (4 no total), conecte o cátodo (perna curta) ao GND e o ânodo (perna longa) a um resistor de $220 \Omega$. Em seguida, ligue o resistor ao pino PWM correspondente no Arduino:</p>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li>LED Cima (`upLed`): D10</li>
+                            <li>LED Baixo (`downLed`): D9</li>
+                            <li>LED Esquerda (`leftLed`): D11</li>
+                            <li>LED Direita (`rightLed`): D6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Código -->
+        <section id="secao8" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">8. Código Arduino Completo (Controle PWM)</h2>
+            <p class="mb-4 text-gray-700">Este é o código completo que realiza a leitura dos eixos analógicos, faz o mapeamento para brilho (0-255) e controla a saída PWM dos LEDs. O botão acende todos os LEDs em brilho máximo.</p>
+            
+            <div class="code-snippet">
+                <button id="copyCodeBtn" class="absolute top-3 right-3 bg-gray-600 hover:bg-gray-700 text-white text-sm px-3 py-1 rounded-md transition duration-300">Copiar Código</button>
+                <pre id="codeBlock">
+<code class="language-cpp">
+// 1. Variáveis de Mapeamento de Pinos
+<span class="code-type">int</span><span class="code-keyword"> xPin </span>= <span class="code-type">A0</span>;      // Pino Analógico para o Eixo X do Joystick
+<span class="code-type">int</span><span class="code-keyword"> yPin </span>= <span class="code-type">A1</span>;      // Pino Analógico para o Eixo Y do Joystick
+<span class="code-type">int</span><span class="code-keyword"> buttonPin </span>= <span class="code-number">2</span>;  // Pino Digital para o Botão do Joystick
+
+// 2. Variáveis de Leitura de Valores
+<span class="code-type">int</span><span class="code-keyword"> xVal</span>;           // Valor lido do Eixo X (0-1023)
+<span class="code-type">int</span><span class="code-keyword"> yVal</span>;           // Valor lido do Eixo Y (0-1023)
+<span class="code-type">int</span><span class="code-keyword"> buttonState</span>;    // Estado lido do Botão (HIGH ou LOW)
+
+// 3. Variáveis de Controle de LED (Pinos PWM no UNO)
+<span class="code-type">int</span><span class="code-keyword"> upLed </span>= <span class="code-number">10</span>;
+<span class="code-type">int</span><span class="code-keyword"> downLed </span>= <span class="code-number">9</span>;
+<span class="code-type">int</span><span class="code-keyword"> leftLed </span>= <span class="code-number">11</span>;
+<span class="code-type">int</span><span class="code-keyword"> rightLed </span>= <span class="code-number">6</span>;
+
+// 4. Variáveis de Brilho (PWM)
+<span class="code-type">int</span><span class="code-keyword"> upBrightness </span>= <span class="code-number">0</span>;
+<span class="code-type">int</span><span class="code-keyword"> downBrightness </span>= <span class="code-number">0</span>;
+<span class="code-type">int</span><span class="code-keyword"> leftBrightness </span>= <span class="code-number">0</span>;
+<span class="code-type">int</span><span class="code-keyword"> rightBrightness </span>= <span class="code-number">0</span>;
+
+// =================================================================
+
+<span class="code-keyword">void</span><span class="code-keyword"> setup</span>() {
+  <span class="code-comment">// Inicializa a comunicação serial para depuração</span>
+  <span class="code-keyword">Serial</span>.<span class="code-keyword">begin</span>(<span class="code-number">9600</span>);
+
+  <span class="code-comment">// Configura os pinos do joystick como ENTRADA</span>
+  <span class="code-keyword">pinMode</span>(xPin, <span class="code-keyword">INPUT</span>);
+  <span class="code-keyword">pinMode</span>(yPin, <span class="code-keyword">INPUT</span>);
+  <span class="code-comment">// Pino do botão com resistor pull-up interno</span>
+  <span class="code-keyword">pinMode</span>(buttonPin, <span class="code-keyword">INPUT_PULLUP</span>);
+
+  <span class="code-comment">// Configura os pinos dos LEDs como SAÍDA</span>
+  <span class="code-keyword">pinMode</span>(upLed, <span class="code-keyword">OUTPUT</span>);
+  <span class="code-keyword">pinMode</span>(downLed, <span class="code-keyword">OUTPUT</span>);
+  <span class="code-keyword">pinMode</span>(leftLed, <span class="code-keyword">OUTPUT</span>);
+  <span class="code-keyword">pinMode</span>(rightLed, <span class="code-keyword">OUTPUT</span>);
+}
+
+// =================================================================
+
+<span class="code-keyword">void</span><span class="code-keyword"> loop</span>() {
+  <span class="code-comment">// Leitura dos Valores Atuais</span>
+  xVal = <span class="code-keyword">analogRead</span>(xPin);
+  yVal = <span class="code-keyword">analogRead</span>(yPin);
+  buttonState = <span class="code-keyword">digitalRead</span>(buttonPin);
+
+  <span class="code-comment">// Mapeamento dos Valores para Brilho (0-255)</span>
+  <span class="code-comment">// 489 (Y) e 511 (X) são os valores centrais do joystick em repouso.</span>
+  
+  <span class="code-comment">// Eixo Y</span>
+  upBrightness = <span class="code-keyword">map</span>(yVal, <span class="code-number">489</span>, <span class="code-number">0</span>, <span class="code-number">0</span>, <span class="code-number">255</span>);    
+  downBrightness = <span class="code-keyword">map</span>(yVal, <span class="code-number">489</span>, <span class="code-number">1023</span>, <span class="code-number">0</span>, <span class="code-number">255</span>); 
+  
+  <span class="code-comment">// Eixo X</span>
+  leftBrightness = <span class="code-keyword">map</span>(xVal, <span class="code-number">511</span>, <span class="code-number">0</span>, <span class="code-number">0</span>, <span class="code-number">255</span>);   
+  rightBrightness = <span class="code-keyword">map</span>(xVal, <span class="code-number">511</span>, <span class="code-number">1023</span>, <span class="code-number">0</span>, <span class="code-number">255</span>);  
+
+  <span class="code-comment">// 🕹️ Controle de Brilho (PWM)</span>
+  
+  <span class="code-comment">// Eixo Y</span>
+  <span class="code-keyword">if</span> (yVal <= <span class="code-number">489</span>) { <span class="code-comment">// Se for movido para CIMA</span>
+    <span class="code-keyword">analogWrite</span>(upLed, upBrightness);
+  }
+
+  <span class="code-keyword">if</span> (yVal >= <span class="code-number">489</span>) { <span class="code-comment">// Se for movido para BAIXO</span>
+    <span class="code-keyword">analogWrite</span>(downLed, downBrightness);
+  }
+
+  <span class="code-comment">// Eixo X</span>
+  <span class="code-keyword">if</span> (xVal <= <span class="code-number">511</span>) { <span class="code-comment">// Se for movido para ESQUERDA</span>
+    <span class="code-keyword">analogWrite</span>(leftLed, leftBrightness);
+  }
+
+  <span class="code-comment">// Eixo X</span>
+  <span class="code-keyword">if</span> (xVal >= <span class="code-number">511</span>) { <span class="code-comment">// Se for movido para DIREITA</span>
+    <span class="code-keyword">analogWrite</span>(rightLed, rightBrightness);
+  }
+
+  <span class="code-comment">// 🚨 Controle do Botão (Acende todos os LEDs com brilho MÁXIMO)</span>
+  <span class="code-comment">// PULLUP ativo: LOW significa pressionado.</span>
+  <span class="code-keyword">if</span> (buttonState == <span class="code-keyword">LOW</span>) {
+    <span class="code-keyword">digitalWrite</span>(upLed, <span class="code-keyword">HIGH</span>);
+    <span class="code-keyword">digitalWrite</span>(downLed, <span class="code-keyword">HIGH</span>);
+    <span class="code-keyword">digitalWrite</span>(leftLed, <span class="code-keyword">HIGH</span>);
+    <span class="code-keyword">digitalWrite</span>(rightLed, <span class="code-keyword">HIGH</span>);
+  }
+}
+</code></pre>
+            </div>
+            
+            <p class="mt-6 text-gray-700">Este código está pronto para ser copiado e carregado no seu Arduino IDE.</p>
+        </section>
+
+        <!-- 9. Download do projeto -->
+        <section id="secao9" class="mb-12 text-center p-8 bg-green-50 rounded-xl shadow-lg border-t-4 border-green-500">
+            <h2 class="text-2xl font-bold mb-4 text-dark-text">9. Download do Projeto Completo (.zip)</h2>
+            <p class="mb-6 text-gray-700">Baixe o arquivo .zip que contém o código-fonte, esquemas de montagem e instruções detalhadas para replicar o projeto.</p>
+            <a id="downloadButton" href="#" onclick="handleDownload(event)" class="inline-flex items-center bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Baixar Projeto Completo
+            </a>
+            <p id="downloadMessage" class="mt-3 text-sm text-red-600 hidden">Link de download placeholder: O arquivo real deve ser hospedado e o `href` atualizado.</p>
+        </section>
+
+        <!-- 10. Vídeo no Youtube -->
+        <section id="secao10" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">10. Vídeo no YouTube: Demonstração e Tutorial</h2>
+            <p class="mb-4 text-gray-700">Assista ao nosso vídeo de demonstração, onde explicamos a montagem e mostramos o Controle de LEDs via Joystick em funcionamento.</p>
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl shadow-2xl">
+                <iframe 
+                    class="w-full h-96" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" 
+                    title="YouTube video player placeholder" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- 11. Problemas enfrentados e lições aprendidas -->
+        <section id="secao11" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">11. Lições Aprendidas</h2>
+            
+            <div class="mb-8 p-6 bg-red-50 rounded-xl shadow-md border-l-4 border-red-500">
+                <h3 class="text-xl font-semibold mb-3 text-red-700">a) Desafio do Ponto de Repouso (Centro)</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700">
+                    <li>
+                        <span class="font-bold">O que deu errado?</span> O joystick não retornava um valor perfeito (ex: 512) quando estava parado, mas sim valores próximos (489 e 511). Isso causava um leve acendimento de LEDs mesmo em repouso.
+                    </li>
+                    <li>
+                        <span class="font-bold">Como foi resolvido?</span> Calibramos o ponto de repouso usando os valores experimentais (489 para Y e 511 para X) diretamente na função `map()` e nas condicionais (`if`), garantindo que o brilho comece em 0 no centro.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="p-6 bg-blue-50 rounded-xl shadow-md border-l-4 border-blue-500">
+                <h3 class="text-xl font-semibold mb-3 text-primary-blue">b) Conclusões e Melhores Práticas</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700">
+                    <li>
+                        <span class="font-bold">Calibração de Sensores:</span> A leitura de sensores analógicos requer calibração empírica. É crucial testar o dispositivo para determinar seus valores reais de limite.
+                    </li>
+                    <li>
+                        <span class="font-bold">Uso Eficiente do `map()`:</span> A função `map()` se provou fundamental para traduzir a amplitude de 10 bits (0-1023) do ADC para a amplitude de 8 bits (0-255) do PWM.
+                    </li>
+                    <li>
+                        <span class="font-bold">Digital vs. Analógico (PWM):</span> O projeto reforça a diferença entre `digitalWrite` (ON/OFF) e `analogWrite` (controle de potência via PWM).
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <footer class="bg-dark-text text-white text-center p-6 mt-12">
+        <p>© 2025 Projeto Sistemas Digitais - Concentrados</p>
+        <p class="text-sm mt-1">Desenvolvido com HTML, CSS (Tailwind) e JavaScript.</p>
+    </footer>
+
+    <script>
+        // JavaScript para o botão de Copiar Código
+        document.getElementById('copyCodeBtn').addEventListener('click', function() {
+            const codeBlock = document.getElementById('codeBlock').innerText;
+            
+            // Tenta usar a API do Clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(codeBlock).then(() => {
+                    this.textContent = 'Copiado!';
+                    setTimeout(() => {
+                        this.textContent = 'Copiar Código';
+                    }, 2000);
+                }).catch(err => {
+                    fallbackCopyTextToClipboard(codeBlock, this);
+                });
+            } else {
+                // Fallback para ambientes restritos (como iframes)
+                fallbackCopyTextToClipboard(codeBlock, this);
+            }
+        });
+
+        function fallbackCopyTextToClipboard(text, buttonElement) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed"; 
+            textArea.style.opacity = "0"; 
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                buttonElement.textContent = 'Copiado!';
+                setTimeout(() => {
+                    buttonElement.textContent = 'Copiar Código';
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao tentar copiar o texto', err);
+                buttonElement.textContent = 'Erro ao Copiar!';
+                setTimeout(() => {
+                    buttonElement.textContent = 'Copiar Código';
+                }, 2000);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Placeholder para Download
+        function handleDownload(event) {
+            event.preventDefault();
+            document.getElementById('downloadMessage').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('downloadMessage').classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
