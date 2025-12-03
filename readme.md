@@ -1,134 +1,64 @@
-🕹️ Projeto Fácil: Controle de Brilho de LED com Joystick
+📘 PROJETO_LED-BLUETOOTH
+📌 Descrição
+Este projeto faz parte da disciplina de Sistemas Digitais da faculdade e tem como objetivo desenvolver um sistema capaz de controlar LEDs via comunicação Bluetooth utilizando a plataforma Arduino.
 
-✨ O que este projeto faz?
+A ideia central é permitir que o usuário envie comandos através de um dispositivo móvel (smartphone ou computador) para acender, apagar ou alterar o padrão de funcionamento dos LEDs conectados ao Arduino.
 
-Este é um projeto simples para quem está começando com Arduino. Ele permite que você controle quatro LEDs (um para cima, um para baixo, um para a esquerda e um para a direita) usando um módulo joystick.
+🎯 Objetivos
+Implementar comunicação sem fio entre Arduino e dispositivos móveis via módulo Bluetooth.
 
-Movimento: Quanto mais você empurra o joystick em uma direção, mais brilhante o LED daquela direção fica.
+Controlar o estado de LEDs (ligar, desligar, piscar, alterar intensidade).
 
-Botão: Se você apertar o botão no topo do joystick, todos os LEDs acendem no máximo.
+Aplicar conceitos de sistemas digitais e eletrônica embarcada.
 
-O objetivo principal é aprender a usar a função analogRead() para ler os movimentos do joystick e a função analogWrite() (PWM) para controlar o brilho dos LEDs.
+Desenvolver um protótipo funcional e documentado.
 
-🔌 Você vai precisar de:
+🛠️ Tecnologias e Componentes
+Arduino UNO/Nano (ou equivalente)
 
-1x Arduino Uno: A placa principal.
+Módulo Bluetooth HC-05/HC-06
 
-1x Módulo Joystick: Com os pinos VRx, VRy e SW (Botão).
+LEDs (vermelho, verde, azul, etc.)
 
-4x LEDs: De cores diferentes.
+Resistores para proteção dos LEDs
 
-4x Resistores de 220 Ohm (Ω): Para proteger os LEDs.
+Protoboard e fios de conexão
 
-Fios Jumper e Protoboard.
+Aplicativo de controle Bluetooth (ex.: Serial Bluetooth Terminal ou app próprio)
 
-📌 Como ligar (Montagem do Circuito)
+⚙️ Funcionamento
+O usuário conecta o dispositivo móvel ao módulo Bluetooth do Arduino.
 
-Você precisa conectar o Joystick e os LEDs nos pinos certos do Arduino:
+Através do aplicativo, comandos são enviados (ex.: "ON", "OFF", "BLINK").
 
-Conexão do Joystick - Pino do Arduino
+O Arduino interpreta os comandos e altera o estado dos LEDs conforme solicitado.
 
-VRx (Eixo Horizontal) -  A0 (Analógico)
+🚀 Como Executar
+Monte o circuito conforme o esquema proposto.
 
-VRy (Eixo Vertical) - A1 (Analógico)
+Carregue o código no Arduino via IDE Arduino.
 
-SW (Botão) -  D2 (Digital)
+Emparelhe o dispositivo móvel com o módulo Bluetooth.
 
-VCC e GND -  5V e GND
+Abra o aplicativo de controle e envie os comandos para interagir com os LEDs.
 
-Conexão dos LEDs (PWM) - Pino do Arduino (Digital PWM)
+📂 Estrutura do Projeto
+Código
+PROJETO_LED-BLUETOOTH/
+│── README.md
+│── src/
+│   └── projeto_led_bluetooth.ino
+│── docs/
+│   └── esquema_circuito.png
+│── extras/
+│   └── exemplos_comandos.txt
 
-LED Esquerda  -  D11
+👨‍💻 Equipe
+Felipe Ulisses
+Gabriel Dias
+Jailson Souza
 
-LED Cima  -  D10
+📚 Licença
+Este projeto está licenciado sob a Apache License 2.0. Você pode usar, modificar e distribuir este código, desde que mantenha os avisos de licença e não ofereça garantias.
 
-LED Baixo -  D9
-
-LED Direita - D6
-
-Lembre-se: Cada LED precisa de um resistor de $220 \Omega$ para não queimar!
-
-💻 Código Arduino Simples
-
-Copie e cole este código no seu Arduino IDE:
-
-// Mapeamento dos pinos do Joystick e dos LEDs
-int xPin = A0;
-int yPin = A1;
-int buttonPin = 2;
-
-int upLed = 10;
-int downLed = 9;
-int leftLed = 11;
-int rightLed = 6;
-
-// Variáveis de Leitura e Brilho (iniciam em 0)
-int xVal, yVal, buttonState;
-int upBrightness, downBrightness, leftBrightness, rightBrightness;
-
-// =================================================================
-
-void setup() {
-  Serial.begin(9600);
-  
-  // Define os pinos do Joystick como entrada
-  pinMode(xPin, INPUT);
-  pinMode(yPin, INPUT);
-  pinMode(buttonPin, INPUT_PULLUP); // Usa o resistor interno para o botão
-
-  // Define os pinos dos LEDs como saída
-  pinMode(upLed, OUTPUT);
-  pinMode(downLed, OUTPUT);
-  pinMode(leftLed, OUTPUT);
-  pinMode(rightLed, OUTPUT);
-}
-
-// =================================================================
-
-void loop() {
-  // 1. Leitura dos valores do Joystick
-  xVal = analogRead(xPin);
-  yVal = analogRead(yPin);
-  buttonState = digitalRead(buttonPin);
-
-  // 2. Mapeamento dos valores (0-1023) para o brilho (0-255)
-  // Os números 489 e 511 são os valores centrais do joystick em repouso.
-  
-  // Eixo Y
-  upBrightness = map(yVal, 489, 0, 0, 255);    
-  downBrightness = map(yVal, 489, 1023, 0, 255); 
-  
-  // Eixo X
-  leftBrightness = map(xVal, 511, 0, 0, 255);   
-  rightBrightness = map(xVal, 511, 1023, 0, 255);  
-
-  // 3. Controle de Brilho (PWM)
-
-  // Liga o LED de CIMA se o joystick for empurrado para cima
-  if (yVal <= 489) { 
-    analogWrite(upLed, upBrightness);
-  }
-
-  // Liga o LED de BAIXO se o joystick for empurrado para baixo
-  if (yVal >= 489) { 
-    analogWrite(downLed, downBrightness);
-  }
-
-  // Liga o LED de ESQUERDA se o joystick for empurrado para a esquerda
-  if (xVal <= 511) { 
-    analogWrite(leftLed, leftBrightness);
-  }
-
-  // Liga o LED de DIREITA se o joystick for empurrado para a direita
-  if (xVal >= 511) { 
-    analogWrite(rightLed, rightBrightness);
-  }
-
-  // 4. Controle do Botão (liga todos os LEDs no máximo)
-  if (buttonState == LOW) { // LOW significa que o botão foi pressionado
-    digitalWrite(upLed, HIGH);
-    digitalWrite(downLed, HIGH);
-    digitalWrite(leftLed, HIGH);
-    digitalWrite(rightLed, HIGH);
-  }
-}
+Para mais detalhes, consulte o texto completo da licença em: Apache License 2.0
