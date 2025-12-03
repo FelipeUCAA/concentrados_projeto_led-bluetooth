@@ -408,21 +408,25 @@
         <section id="secao9" class="mb-12 text-center p-8 bg-green-50 rounded-xl shadow-lg border-t-4 border-green-500">
             <h2 class="text-2xl font-bold mb-4 text-dark-text">9. Download do Projeto Completo (.zip)</h2>
             <p class="mb-6 text-gray-700">Baixe o arquivo .zip que contém o código-fonte, esquemas de montagem e instruções detalhadas para replicar o projeto.</p>
-            <a id="downloadButton" href="#" onclick="handleDownload(event)" class="inline-flex items-center bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-green-700 transition duration-300 transform hover:scale-105">
-                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                Baixar Projeto Completo
+            <a id="downloadButton" 
+                href="project_zip.zip"
+                class="inline-flex items-center bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-green-700 transition duration-300 transform hover:scale-105"
+                download>
+                Baixar
             </a>
+            
             <p id="downloadMessage" class="mt-3 text-sm text-red-600 hidden">Link de download placeholder: O arquivo real deve ser hospedado e o `href` atualizado.</p>
         </section>
 
         <!-- 10. Vídeo no Youtube -->
         <section id="secao10" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 text-primary-blue border-b-2 border-primary-blue pb-2">10. Vídeo no YouTube: Demonstração e Tutorial</h2>
-            <p class="mb-4 text-gray-700">Assista ao nosso vídeo de demonstração, onde explicamos a montagem e mostramos o Controle de LEDs via Joystick em funcionamento.</p>
+            <p class="mb-4 text-gray-700">Assista ao nosso vídeo de demonstração, onde mostramos o Controle de LEDs via Joystick em funcionamento.</p>
             <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl shadow-2xl">
                 <iframe 
                     class="w-full h-96" 
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube.com/embed/oODfFxuLpkAta" 
                     title="YouTube video player placeholder" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
