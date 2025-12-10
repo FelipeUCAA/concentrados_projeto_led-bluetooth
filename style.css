@@ -1,0 +1,40 @@
+/* Chamada para fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #202124;
+}
+/* Estilo para simular realce de sintaxe em blocos de código */
+.code-snippet {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.code-snippet code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    line-height: 1.5;
+}
+.code-keyword { color: #66d9ef; }
+.code-type { color: #a6e22e; }
+.code-string { color: #e6db74; }
+.code-number { color: #ae81ff; }
+.code-comment { color: #75715e; }
+/* Habilitar rolagem suave para navegação entre seções */
+html {
+    scroll-behavior: smooth;
+}
+/* Estilo para a barra de navegação horizontal responsiva */
+.nav-scroll {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+.nav-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
